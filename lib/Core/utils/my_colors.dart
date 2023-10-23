@@ -8,4 +8,6 @@ abstract class MyColors {
   static const Color myPink = Color(0xffF76c6A);
   static const Color myRed = Color(0xFFF44336);
   static const Color myDarkGrey = Color(0xff2F2F2F);
+
+  static const Color myBabyBlue = Color(0xff7EBDC2);
 }

@@ -1,12 +1,9 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:pomodoro_master_app/simple_bloc_observer.dart';
 
 import 'Core/utils/my_colors.dart';
-import 'Core/utils/styles.dart';
 import 'Feature/Home/presentation/manager/theme_cubit/theme_cubit.dart';
 import 'Feature/Home/presentation/views/home_view.dart';
 
@@ -51,17 +48,19 @@ class PomodoroMasterApp extends StatelessWidget {
                   ),
             ),
       builder: DevicePreview.appBuilder,
-      home: AnimatedSplashScreen(
-        splash: Text('Pomodoro Master', style: Styles.textStyle36),
-        nextScreen: const HomeView(),
-        splashTransition: SplashTransition.scaleTransition,
-        duration: 2000,
-        curve: Curves.easeOut,
-        animationDuration: const Duration(milliseconds: 1500),
-        pageTransitionType: PageTransitionType.rightToLeftWithFade,
-        backgroundColor:
-            themeCubit.isDark ? MyColors.myDarkGrey : MyColors.myGrey,
-      ),
+      home: const HomeView(),
+
+      // AnimatedSplashScreen(
+      //   splash: Text('Pomodoro Master', style: Styles.textStyle36),
+      //   nextScreen: const HomeView(),
+      //   splashTransition: SplashTransition.scaleTransition,
+      //   duration: 2000,
+      //   curve: Curves.easeOut,
+      //   animationDuration: const Duration(milliseconds: 1500),
+      //   pageTransitionType: PageTransitionType.rightToLeftWithFade,
+      //   backgroundColor:
+      //       themeCubit.isDark ? MyColors.myDarkGrey : MyColors.myGrey,
+      // ),
     );
   }
 }
