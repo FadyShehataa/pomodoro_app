@@ -30,30 +30,29 @@ class PomodoroMasterApp extends StatelessWidget {
     ThemeCubit themeCubit = BlocProvider.of<ThemeCubit>(context, listen: true);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // theme: themeCubit.isDark
-      //     ? ThemeData.dark().copyWith(
-      //         appBarTheme: const AppBarTheme(
-      //           iconTheme: IconThemeData(color: MyColors.myWhite),
-      //         ),
-      //         colorScheme: ThemeData().colorScheme.copyWith(
-      //               primary: MyColors.myOrange,
-      //               brightness: Brightness.dark,
-      //             ),
-      //       )
-      //     : ThemeData.light().copyWith(
-      //         appBarTheme: const AppBarTheme(
-      //           iconTheme: IconThemeData(color: MyColors.myBlack),
-      //         ),
-      //         scaffoldBackgroundColor: MyColors.myGrey,
-      //         colorScheme: ThemeData().colorScheme.copyWith(
-      //               primary: MyColors.myOrange,
-      //               brightness: Brightness.light,
-      //             ),
-      //       ),
-
+      theme: themeCubit.isDark
+          ? ThemeData.dark().copyWith(
+              appBarTheme: const AppBarTheme(
+                iconTheme: IconThemeData(color: MyColors.myWhite),
+              ),
+              colorScheme: ThemeData().colorScheme.copyWith(
+                    primary: MyColors.myOrange,
+                    brightness: Brightness.dark,
+                  ),
+            )
+          : ThemeData.light().copyWith(
+              appBarTheme: const AppBarTheme(
+                iconTheme: IconThemeData(color: MyColors.myBlack),
+              ),
+              scaffoldBackgroundColor: MyColors.myGrey,
+              colorScheme: ThemeData().colorScheme.copyWith(
+                    primary: MyColors.myOrange,
+                    brightness: Brightness.light,
+                  ),
+            ),
       builder: DevicePreview.appBuilder,
       home: AnimatedSplashScreen(
-        splash: Text('Pomodoro Master', style: Styles.textStyle48),
+        splash: Text('Pomodoro Master', style: Styles.textStyle36),
         nextScreen: const HomeView(),
         splashTransition: SplashTransition.scaleTransition,
         duration: 2000,
