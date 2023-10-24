@@ -32,22 +32,23 @@ class CreatePomodoroFooter extends StatelessWidget {
             ),
             onPressed: () {
               if (formKey.currentState!.validate()) {
-                // PomodoroModel pomodoroModel = PomodoroModel(
-                //   title: controller.text,
-                //   pomodoroTime: BlocProvider.of<CreatePomodoroCubit>(context)
-                //       .pomodoroTime,
-                //   shortBreakTime: BlocProvider.of<CreatePomodoroCubit>(context)
-                //       .shortBreakTime,
-                //   longBreakTime: BlocProvider.of<CreatePomodoroCubit>(context)
-                //       .longBreakTime,
-                //   pomodorosUntilLongBreak:
-                //       BlocProvider.of<CreatePomodoroCubit>(context)
-                //           .pomodorosUntilLongBreak,
-                //   autoStartBreaks: true,
-                //   autoStartPomodoro: true,
-                //   color: MyColors.myBabyBlue.value,
-                // );
-                // BlocProvider.of<CreatePomodoroCubit>(context).addPomodoro(pomodoroModel);
+                PomodoroModel pomodoroModel = PomodoroModel(
+                  title: controller.text,
+                  pomodoroTime: BlocProvider.of<CreatePomodoroCubit>(context)
+                      .pomodoroTime,
+                  shortBreakTime: BlocProvider.of<CreatePomodoroCubit>(context)
+                      .shortBreakTime,
+                  longBreakTime: BlocProvider.of<CreatePomodoroCubit>(context)
+                      .longBreakTime,
+                  pomodorosUntilLongBreak:
+                      BlocProvider.of<CreatePomodoroCubit>(context)
+                          .pomodorosUntilLongBreak,
+                  autoStartBreaks: true,
+                  autoStartPomodoro: true,
+                  color: kColors[0].value,
+                );
+                BlocProvider.of<CreatePomodoroCubit>(context)
+                    .addPomodoro(pomodoroModel);
 
                 // print pomodoro model info
                 print('Pomodoro name: ${controller.text}');

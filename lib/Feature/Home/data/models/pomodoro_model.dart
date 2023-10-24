@@ -19,7 +19,7 @@ class PomodoroModel extends HiveObject {
   @HiveField(6)
   final bool autoStartPomodoro;
   @HiveField(7)
-  final int color;
+  int color;
 
   PomodoroModel({
     required this.title,

@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:pomodoro_master_app/Core/utils/constants.dart';
@@ -15,6 +16,7 @@ class CreatePomodoroCubit extends Cubit<CreatePomodoroState> {
   int pomodorosUntilLongBreak = 4;
 
   int time = 0;
+  Color colorPomodoro = kColors[0];
 
   void changeTime() {
     emit(CreatePomodoroChangLoading());
@@ -22,6 +24,7 @@ class CreatePomodoroCubit extends Cubit<CreatePomodoroState> {
   }
 
   addPomodoro(PomodoroModel pomodoroModel) async {
+    pomodoroModel.color = colorPomodoro.value;
     emit(AddPomodoroLoading());
     try {
       Box<PomodoroModel> pomodorosBox = Hive.box<PomodoroModel>(kPomodoroBox);
@@ -30,5 +33,11 @@ class CreatePomodoroCubit extends Cubit<CreatePomodoroState> {
     } on Exception catch (e) {
       emit(AddPomodoroFailure(message: e.toString()));
     }
+    colorPomodoro = kColors[0];
+  }
+
+  changeColor() {
+    emit(ChangeColorAddPomodoroLoading());
+    emit(ChangeColorAddPomodoroSuccess());
   }
 }

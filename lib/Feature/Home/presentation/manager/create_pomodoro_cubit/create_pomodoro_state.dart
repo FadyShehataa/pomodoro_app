@@ -22,3 +22,7 @@ final class AddPomodoroFailure extends CreatePomodoroState {
 
   const AddPomodoroFailure({required this.message});
 }
+
+final class ChangeColorAddPomodoroLoading extends CreatePomodoroState {}
+
+final class ChangeColorAddPomodoroSuccess extends CreatePomodoroState {}

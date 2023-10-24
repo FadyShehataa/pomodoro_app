@@ -8,16 +8,18 @@ class CustomCircleAvatar extends StatelessWidget {
     this.backgroundColor = MyColors.myWhite,
     required this.icon,
     this.onPressed,
+    this.radius = 25,
   });
 
   final Color backgroundColor;
   final IconData icon;
   final void Function()? onPressed;
+  final double radius;
 
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      radius: 25,
+      radius: radius,
       backgroundColor: backgroundColor,
       child: IconButton(
         icon: Icon(
@@ -26,6 +28,7 @@ class CustomCircleAvatar extends StatelessWidget {
           size: 30,
         ),
         onPressed: onPressed,
+        padding: EdgeInsets.zero,
       ),
     );
   }
