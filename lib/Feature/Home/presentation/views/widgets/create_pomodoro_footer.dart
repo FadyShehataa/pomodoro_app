@@ -43,26 +43,16 @@ class CreatePomodoroFooter extends StatelessWidget {
                   pomodorosUntilLongBreak:
                       BlocProvider.of<CreatePomodoroCubit>(context)
                           .pomodorosUntilLongBreak,
-                  autoStartBreaks: true,
-                  autoStartPomodoro: true,
+                  autoStartBreaks: BlocProvider.of<CreatePomodoroCubit>(context)
+                      .autoStartBreaks,
+                  autoStartPomodoro:
+                      BlocProvider.of<CreatePomodoroCubit>(context)
+                          .autoStartPomodoro,
                   color: kColors[0].value,
                 );
                 BlocProvider.of<CreatePomodoroCubit>(context)
                     .addPomodoro(pomodoroModel);
-
-                // print pomodoro model info
-                print('Pomodoro name: ${controller.text}');
-                print(
-                    'Pomodoro time: ${BlocProvider.of<CreatePomodoroCubit>(context).pomodoroTime}');
-                print(
-                    'Short break time: ${BlocProvider.of<CreatePomodoroCubit>(context).shortBreakTime}');
-                print(
-                    'Long break time: ${BlocProvider.of<CreatePomodoroCubit>(context).longBreakTime}');
-                print(
-                    'pomodoros until Long break time: ${BlocProvider.of<CreatePomodoroCubit>(context).pomodorosUntilLongBreak}');
-                // print('Auto start breaks: ${BlocProvider.of<CreatePomodoroCubit>(context).autoStartBreaks}');
-                // print('Auto start pomodoro: ${BlocProvider.of<CreatePomodoroCubit>(context).autoStartPomodoro}');
-                // print('Pomodoro color: ${BlocProvider.of<CreatePomodoroCubit>(context).pomodoroColor}');
+                Navigator.pop(context);
               }
             },
             child: Text(

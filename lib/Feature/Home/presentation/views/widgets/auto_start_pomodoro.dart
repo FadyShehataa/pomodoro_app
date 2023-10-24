@@ -7,9 +7,8 @@ import 'package:pomodoro_master_app/Feature/Home/presentation/views/widgets/cust
 
 import '../../manager/create_pomodoro_cubit/create_pomodoro_cubit.dart';
 
-class AutoStartBreakWidget extends StatelessWidget {
-  const AutoStartBreakWidget({super.key});
-
+class AutoStartPomodoroWidget extends StatelessWidget {
+  const AutoStartPomodoroWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,12 +26,12 @@ class AutoStartBreakWidget extends StatelessWidget {
                       icon: Icons.check,
                       backgroundColor:
                           BlocProvider.of<CreatePomodoroCubit>(context)
-                                  .autoStartBreaks
+                                  .autoStartPomodoro
                               ? MyColors.myWhite
                               : MyColors.myWhite.withOpacity(0.5),
                       onPressed: () {
                         BlocProvider.of<CreatePomodoroCubit>(context)
-                            .autoStartBreaks = true;
+                            .autoStartPomodoro = true;
                         BlocProvider.of<CreatePomodoroCubit>(context)
                             .changeTime();
                       },
@@ -41,12 +40,12 @@ class AutoStartBreakWidget extends StatelessWidget {
                       icon: Icons.close,
                       backgroundColor:
                           BlocProvider.of<CreatePomodoroCubit>(context)
-                                  .autoStartBreaks
+                                  .autoStartPomodoro
                               ? MyColors.myWhite.withOpacity(0.5)
                               : MyColors.myWhite,
                       onPressed: () {
                         BlocProvider.of<CreatePomodoroCubit>(context)
-                            .autoStartBreaks = false;
+                            .autoStartPomodoro = false;
                         BlocProvider.of<CreatePomodoroCubit>(context)
                             .changeTime();
                       },
@@ -54,7 +53,7 @@ class AutoStartBreakWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              Text('Auto start breaks', style: Styles.textStyle16),
+              Text('Auto start Pomodoro', style: Styles.textStyle16),
             ],
           ),
         );

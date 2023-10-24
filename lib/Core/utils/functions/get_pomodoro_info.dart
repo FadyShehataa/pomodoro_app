@@ -15,7 +15,7 @@ Map<String, dynamic> getPomodoroInfo({
       pomodoroInfo['title'] = 'Pomodoro Time';
       pomodoroInfo['onPressed'] = () {
         BlocProvider.of<CreatePomodoroCubit>(context).pomodoroTime =
-            BlocProvider.of<CreatePomodoroCubit>(context).time;
+            BlocProvider.of<CreatePomodoroCubit>(context).tempTime;
         BlocProvider.of<CreatePomodoroCubit>(context).changeTime();
       };
       pomodoroInfo['time'] =
@@ -25,7 +25,7 @@ Map<String, dynamic> getPomodoroInfo({
       pomodoroInfo['title'] = 'Short Break Time';
       pomodoroInfo['onPressed'] = () {
         BlocProvider.of<CreatePomodoroCubit>(context).shortBreakTime =
-            BlocProvider.of<CreatePomodoroCubit>(context).time;
+            BlocProvider.of<CreatePomodoroCubit>(context).tempTime;
         BlocProvider.of<CreatePomodoroCubit>(context).changeTime();
       };
       pomodoroInfo['time'] =
@@ -35,7 +35,7 @@ Map<String, dynamic> getPomodoroInfo({
       pomodoroInfo['title'] = 'Long Break Time';
       pomodoroInfo['onPressed'] = () {
         BlocProvider.of<CreatePomodoroCubit>(context).longBreakTime =
-            BlocProvider.of<CreatePomodoroCubit>(context).time;
+            BlocProvider.of<CreatePomodoroCubit>(context).tempTime;
         BlocProvider.of<CreatePomodoroCubit>(context).changeTime();
       };
       pomodoroInfo['time'] =
@@ -45,7 +45,7 @@ Map<String, dynamic> getPomodoroInfo({
       pomodoroInfo['title'] = 'Pomodoros Until Long Break';
       pomodoroInfo['onPressed'] = () {
         BlocProvider.of<CreatePomodoroCubit>(context).pomodorosUntilLongBreak =
-            BlocProvider.of<CreatePomodoroCubit>(context).time;
+            BlocProvider.of<CreatePomodoroCubit>(context).tempTime;
         BlocProvider.of<CreatePomodoroCubit>(context).changeTime();
       };
       pomodoroInfo['time'] =

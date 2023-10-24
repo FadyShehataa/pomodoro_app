@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pomodoro_master_app/Feature/Home/presentation/views/widgets/auto_start_pomodoro.dart';
 import 'package:pomodoro_master_app/Feature/Home/presentation/views/widgets/pomodoro_times.dart';
 
 import '../../../../../Core/widgets/custom_text_form_field.dart';
@@ -32,8 +33,8 @@ class CreatePomodoroViewBody extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 const PomodoroTimes(),
-                const AutoStartWidget(title: 'Auto start breaks'),
-                const AutoStartWidget(title: 'Auto start Pomodoro'),
+                const AutoStartBreakWidget(),
+                const AutoStartPomodoroWidget(),
                 const CreatePomodoroColors(),
                 CreatePomodoroFooter(
                   formKey: formKey,

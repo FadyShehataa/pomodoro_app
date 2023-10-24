@@ -48,4 +48,10 @@ abstract class Styles {
     color: MyColors.myOrange,
     fontWeight: FontWeight.w500,
   );
+
+  static final textStyle60 = TextStyle(
+    fontSize: 60,
+    fontFamily: GoogleFonts.montserrat().fontFamily,
+    fontWeight: FontWeight.w400,
+  );
 }

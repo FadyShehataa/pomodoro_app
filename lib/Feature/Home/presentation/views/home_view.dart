@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:pomodoro_master_app/Core/utils/constants.dart';
+import 'package:pomodoro_master_app/Feature/Home/data/models/pomodoro_model.dart';
 import 'package:pomodoro_master_app/Feature/Home/presentation/views/create_pomodoro_view.dart';
 
 class HomeView extends StatelessWidget {
@@ -23,6 +26,15 @@ class HomeView extends StatelessWidget {
               );
             },
             child: const Text('Go to the next page'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              // pomodors hive box
+              final pomodorsBox = Hive.box<PomodoroModel>(kPomodoroBox);
+              print('pomodoros  = ');
+              print(pomodorsBox.values.toList());
+            },
+            child: const Text('show pomodoros'),
           ),
           // SizedBox.expand(
           //   child: DraggableScrollableSheet(
@@ -63,7 +75,6 @@ class HomeView extends StatelessWidget {
           //     },
           //   ),
           // ),
-        
         ],
       ),
     );

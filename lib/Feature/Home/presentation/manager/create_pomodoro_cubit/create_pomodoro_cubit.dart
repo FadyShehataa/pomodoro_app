@@ -14,9 +14,11 @@ class CreatePomodoroCubit extends Cubit<CreatePomodoroState> {
   int shortBreakTime = 5;
   int longBreakTime = 15;
   int pomodorosUntilLongBreak = 4;
-
-  int time = 0;
   Color colorPomodoro = kColors[0];
+  bool autoStartBreaks = true;
+  bool autoStartPomodoro = true;
+
+  int tempTime = 0;
 
   void changeTime() {
     emit(CreatePomodoroChangLoading());

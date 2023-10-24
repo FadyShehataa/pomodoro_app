@@ -18,7 +18,7 @@ Future<void> showMyDialog({
         pomodoroDurationType: pomodoroDurationType,
         context: context,
       );
-      BlocProvider.of<CreatePomodoroCubit>(context).time = pomodoroInfo['time'];
+      BlocProvider.of<CreatePomodoroCubit>(context).tempTime = pomodoroInfo['time'];
       return AlertDialog(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -39,9 +39,9 @@ Future<void> showMyDialog({
                 CustomCircleAvatar(
                   icon: Icons.remove,
                   onPressed: () {
-                    if (BlocProvider.of<CreatePomodoroCubit>(context).time !=
+                    if (BlocProvider.of<CreatePomodoroCubit>(context).tempTime !=
                         1) {
-                      BlocProvider.of<CreatePomodoroCubit>(context).time--;
+                      BlocProvider.of<CreatePomodoroCubit>(context).tempTime--;
                       BlocProvider.of<CreatePomodoroCubit>(context)
                           .changeTime();
                     }
@@ -51,16 +51,16 @@ Future<void> showMyDialog({
                   builder: (context, state) {
                     return Text(
                       BlocProvider.of<CreatePomodoroCubit>(context)
-                          .time
+                          .tempTime
                           .toString(),
-                      style: Styles.textStyle20,
+                      style: Styles.textStyle60,
                     );
                   },
                 ),
                 CustomCircleAvatar(
                   icon: Icons.add,
                   onPressed: () {
-                    BlocProvider.of<CreatePomodoroCubit>(context).time++;
+                    BlocProvider.of<CreatePomodoroCubit>(context).tempTime++;
                     BlocProvider.of<CreatePomodoroCubit>(context).changeTime();
                   },
                 ),
