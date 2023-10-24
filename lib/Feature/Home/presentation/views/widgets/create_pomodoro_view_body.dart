@@ -13,20 +13,32 @@ class CreatePomodoroViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController pomodoroNameController =
+        TextEditingController();
+    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
     return BlocBuilder<CreatePomodoroCubit, CreatePomodoroState>(
       builder: (context, state) {
-        return const SingleChildScrollView(
+        return SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
               children: [
-                CustomTextFormField(),
-                SizedBox(height: 20),
-                PomodoroTimes(),
-                AutoStartWidget(title: 'Auto start breaks'),
-                AutoStartWidget(title: 'Auto start Pomodoro'),
-                CreatePomodoroColors(),
-                CreatePomodoroFooter(),
+                Form(
+                  key: formKey,
+                  child: CustomTextFormField(
+                    controller: pomodoroNameController,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                const PomodoroTimes(),
+                const AutoStartWidget(title: 'Auto start breaks'),
+                const AutoStartWidget(title: 'Auto start Pomodoro'),
+                const CreatePomodoroColors(),
+                CreatePomodoroFooter(
+                  formKey: formKey,
+                  controller: pomodoroNameController,
+                ),
               ],
             ),
           ),

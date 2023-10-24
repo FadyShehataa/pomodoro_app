@@ -4,13 +4,13 @@ import '../../../../../Core/utils/my_colors.dart';
 import '../../../../../Core/utils/styles.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({super.key, this.controller});
+  const CustomTextFormField({super.key, required this.controller});
 
-  final TextEditingController? controller;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField( // TODO: key
+    return TextFormField(
       controller: controller,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
