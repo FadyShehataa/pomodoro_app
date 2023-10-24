@@ -19,7 +19,9 @@ class CreatePomodoroView extends StatelessWidget {
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
-      body: const CreatePomodoroViewBody(),
+      body: const SafeArea(
+        child: CreatePomodoroViewBody(),
+      ),
     );
   }
 }

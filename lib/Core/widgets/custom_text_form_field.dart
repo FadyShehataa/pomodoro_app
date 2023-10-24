@@ -4,18 +4,13 @@ import '../../../../../Core/utils/my_colors.dart';
 import '../../../../../Core/utils/styles.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({
-    super.key,
-    this.controller,
-    this.validator,
-  });
+  const CustomTextFormField({super.key, this.controller});
 
   final TextEditingController? controller;
-  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
+    return TextFormField( // TODO: key
       controller: controller,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
@@ -39,20 +34,25 @@ class CustomTextFormField extends StatelessWidget {
             width: 2,
           ),
         ),
-        hintStyle: Styles.textStyle16.copyWith(color: MyColors.myWhite),
         enabledBorder: const UnderlineInputBorder(
           borderSide: BorderSide(
             color: MyColors.myWhite,
             width: 1,
           ),
         ),
+        hintStyle: Styles.textStyle16.copyWith(color: MyColors.myGrey),
       ),
-      style: Styles.textStyle14.copyWith(
-        color: MyColors.myGrey,
+      style: Styles.textStyle16.copyWith(
+        color: MyColors.myWhite,
         fontWeight: FontWeight.w500,
       ),
       cursorColor: MyColors.myWhite,
-      validator: validator,
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'Please enter Pomodoro name';
+        }
+        return null;
+      },
     );
   }
 }

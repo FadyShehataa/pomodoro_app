@@ -22,11 +22,15 @@ class CreatePomodoroFooter extends StatelessWidget {
               ),
               backgroundColor: MyColors.myWhite,
             ),
-            onPressed: () {},
+            onPressed: () {
+              // TODO : create pomodoro
+            },
             child: Text(
               'Create Pomodoro',
               style: Styles.textStyle14.copyWith(
-                  fontWeight: FontWeight.w500, color: MyColors.myBlack),
+                fontWeight: FontWeight.w500,
+                color: MyColors.myBlack,
+              ),
             ),
           ),
         ),

@@ -20,8 +20,8 @@ class CustomPomodoroTimeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: InkWell(
-        onTap: () {
-          showMyDialog(
+        onTap: () async {
+          await showMyDialog(
             context: context,
             pomodoroDurationType: pomodoroDurationType,
           );
