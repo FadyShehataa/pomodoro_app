@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../Core/utils/styles.dart';
 import '../../../../../Core/widgets/custom_text_form_field.dart';
+import '../../manager/create_pomodoro_cubit/create_pomodoro_cubit.dart';
 import 'auto_start_widget.dart';
 import 'create_pomodoro_colors.dart';
 import 'create_pomodoro_footer.dart';
@@ -12,6 +14,7 @@ class CreatePomodoroViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var createPomodoroCubit = BlocProvider.of<CreatePomodoroCubit>(context);
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -21,13 +24,22 @@ class CreatePomodoroViewBody extends StatelessWidget {
             const SizedBox(height: 20),
             Text('DURATIONS', style: Styles.textStyle14),
             const SizedBox(height: 10),
-            const Row(
+            Row(
               children: [
-                CustomPomodoroTimeWidget(time: 25, title: 'Pomodoro'),
-                SizedBox(width: 5),
-                CustomPomodoroTimeWidget(time: 5, title: 'Short Break'),
-                SizedBox(width: 5),
-                CustomPomodoroTimeWidget(time: 15, title: 'Long Break'),
+                CustomPomodoroTimeWidget(
+                  time: createPomodoroCubit.pomodoroTime,
+                  title: 'Pomodoro',
+                ),
+                const SizedBox(width: 5),
+                CustomPomodoroTimeWidget(
+                  time: createPomodoroCubit.shortBreakTime,
+                  title: 'Short Break',
+                ),
+                const SizedBox(width: 5),
+                CustomPomodoroTimeWidget(
+                  time: createPomodoroCubit.longBreakTime,
+                  title: 'Long Break',
+                ),
               ],
             ),
             const Row(

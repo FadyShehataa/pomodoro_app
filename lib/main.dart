@@ -1,6 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pomodoro_master_app/Feature/Home/presentation/manager/create_pomodoro_cubit/create_pomodoro_cubit.dart';
 import 'package:pomodoro_master_app/simple_bloc_observer.dart';
 
 import 'Core/utils/my_colors.dart';
@@ -11,8 +12,15 @@ void main() async {
   Bloc.observer = SimpleBlocObserver();
   runApp(
     DevicePreview(
-      builder: (context) => BlocProvider(
-        create: (_) => ThemeCubit(),
+      builder: (context) => MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (_) => ThemeCubit(),
+          ),
+          BlocProvider(
+            create: (context) => CreatePomodoroCubit(),
+          ),
+        ],
         child: const PomodoroMasterApp(),
       ),
     ),
