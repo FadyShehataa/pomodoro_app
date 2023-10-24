@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../manager/create_pomodoro_cubit/create_pomodoro_cubit.dart';
 import 'create_pomodoro_view.dart';
 
 class HomeView extends StatelessWidget {
