@@ -13,10 +13,12 @@ class PomodoroModel extends HiveObject {
   @HiveField(3)
   final int longBreakTime;
   @HiveField(4)
-  final bool autoStartBreaks;
+  final int pomodorosUntilLongBreak;
   @HiveField(5)
-  final bool autoStartPomodoro;
+  final bool autoStartBreaks;
   @HiveField(6)
+  final bool autoStartPomodoro;
+  @HiveField(7)
   final int color;
 
   PomodoroModel({
@@ -24,6 +26,7 @@ class PomodoroModel extends HiveObject {
     required this.pomodoroTime,
     required this.shortBreakTime,
     required this.longBreakTime,
+    required this.pomodorosUntilLongBreak,
     required this.autoStartBreaks,
     required this.autoStartPomodoro,
     required this.color,

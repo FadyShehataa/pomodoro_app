@@ -40,12 +40,13 @@ class CreatePomodoroFooter extends StatelessWidget {
                 //       .shortBreakTime,
                 //   longBreakTime: BlocProvider.of<CreatePomodoroCubit>(context)
                 //       .longBreakTime,
-                //   // pomodorosUntilLongBreak: BlocProvider.of<CreatePomodoroCubit>(context).pomodorosUntilLongBreak,
+                //   pomodorosUntilLongBreak:
+                //       BlocProvider.of<CreatePomodoroCubit>(context)
+                //           .pomodorosUntilLongBreak,
                 //   autoStartBreaks: true,
                 //   autoStartPomodoro: true,
                 //   color: MyColors.myBabyBlue.value,
                 // );
-
                 // BlocProvider.of<CreatePomodoroCubit>(context).addPomodoro(pomodoroModel);
 
                 // print pomodoro model info

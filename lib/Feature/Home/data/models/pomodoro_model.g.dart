@@ -21,16 +21,17 @@ class PomodoroModelAdapter extends TypeAdapter<PomodoroModel> {
       pomodoroTime: fields[1] as int,
       shortBreakTime: fields[2] as int,
       longBreakTime: fields[3] as int,
-      autoStartBreaks: fields[4] as bool,
-      autoStartPomodoro: fields[5] as bool,
-      color: fields[6] as int,
+      pomodorosUntilLongBreak: fields[4] as int,
+      autoStartBreaks: fields[5] as bool,
+      autoStartPomodoro: fields[6] as bool,
+      color: fields[7] as int,
     );
   }
 
   @override
   void write(BinaryWriter writer, PomodoroModel obj) {
     writer
-      ..writeByte(7)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.title)
       ..writeByte(1)
@@ -40,10 +41,12 @@ class PomodoroModelAdapter extends TypeAdapter<PomodoroModel> {
       ..writeByte(3)
       ..write(obj.longBreakTime)
       ..writeByte(4)
-      ..write(obj.autoStartBreaks)
+      ..write(obj.pomodorosUntilLongBreak)
       ..writeByte(5)
-      ..write(obj.autoStartPomodoro)
+      ..write(obj.autoStartBreaks)
       ..writeByte(6)
+      ..write(obj.autoStartPomodoro)
+      ..writeByte(7)
       ..write(obj.color);
   }
 
