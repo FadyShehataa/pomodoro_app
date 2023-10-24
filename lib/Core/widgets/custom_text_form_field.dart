@@ -2,18 +2,15 @@ import 'package:flutter/material.dart';
 
 import '../../../../../Core/utils/my_colors.dart';
 import '../../../../../Core/utils/styles.dart';
-import '../utils/constants.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
     this.controller,
-    this.hintText,
     this.validator,
   });
 
   final TextEditingController? controller;
-  final String? hintText;
   final String? Function(String?)? validator;
 
   @override
@@ -22,33 +19,29 @@ class CustomTextFormField extends StatelessWidget {
       controller: controller,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
-        hintText: hintText,
+        hintText: 'Pomodoro Name',
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(defaultRadius),
-          borderSide: const BorderSide(
+        focusedBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(
             color: MyColors.myWhite,
             width: 2,
           ),
         ),
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(defaultRadius),
-          borderSide: const BorderSide(
+        errorBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(
             color: MyColors.myRed,
           ),
         ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(defaultRadius),
-          borderSide: const BorderSide(
+        border: const UnderlineInputBorder(
+          borderSide: BorderSide(
             color: MyColors.myRed,
             width: 2,
           ),
         ),
         hintStyle: Styles.textStyle16.copyWith(color: MyColors.myWhite),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(defaultRadius),
-          borderSide: const BorderSide(
+        enabledBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(
             color: MyColors.myWhite,
             width: 1,
           ),

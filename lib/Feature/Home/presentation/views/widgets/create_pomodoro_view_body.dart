@@ -20,7 +20,7 @@ class CreatePomodoroViewBody extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 16),
             child: Column(
               children: [
-                CustomTextFormField(hintText: 'Enter Pomodoro Name'),
+                CustomTextFormField(),
                 SizedBox(height: 20),
                 PomodoroTimes(),
                 AutoStartWidget(title: 'Auto start breaks'),
