@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pomodoro_master_app/Core/utils/my_colors.dart';
 import 'package:pomodoro_master_app/Core/utils/styles.dart';
 import 'package:pomodoro_master_app/Feature/Home/presentation/views/widgets/background_container.dart';
+import 'package:pomodoro_master_app/Feature/Home/presentation/views/widgets/custom_circle_avatar.dart';
 
 class AutoStartWidget extends StatelessWidget {
   const AutoStartWidget({super.key, required this.title});
@@ -18,23 +19,10 @@ class AutoStartWidget extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const CircleAvatar(
-                  radius: 25,
-                  backgroundColor: Colors.white,
-                  child: Icon(
-                    Icons.check,
-                    color: MyColors.myBabyBlue,
-                    size: 30,
-                  ),
-                ),
-                CircleAvatar(
-                  radius: 25,
+                const CustomCircleAvatar(icon: Icons.check),
+                CustomCircleAvatar(
+                  icon: Icons.close,
                   backgroundColor: MyColors.myWhite.withOpacity(0.5),
-                  child: const Icon(
-                    Icons.close,
-                    color: MyColors.myBabyBlue,
-                    size: 30,
-                  ),
                 ),
               ],
             ),

@@ -8,3 +8,7 @@ sealed class CreatePomodoroState extends Equatable {
 }
 
 final class CreatePomodoroInitial extends CreatePomodoroState {}
+
+final class CreatePomodoroChangLoading extends CreatePomodoroState {}
+
+final class CreatePomodoroChangSuccess extends CreatePomodoroState {}
